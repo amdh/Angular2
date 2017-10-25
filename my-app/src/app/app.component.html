@@ -1,0 +1,87 @@
+
+
+<div class="container">
+    <h3>
+        {{title}}
+      </h3>
+    <div class="panel-group">
+      
+      <div class="panel panel-default">
+          <div class="panel-heading"> Server 2 Communication</div>
+          <div class="panel-body">Panel Content
+            <div class="form-group">
+                <label for="server12status">Server2 status from Server1</label>
+                <button (click)="getServer12Status()" type="submit" class="btn btn-primary"id="server12status">Get Status</button>
+                 <p></p>
+                <div class="alert alert-info" role="alert">
+                  Output:{{server12Status}}
+                </div>
+                
+
+                <label for="server2status">Server2 status from Server2</label>
+                <button (click)="getServer2Status()" type="submit" class="btn btn-primary" id="server2status">Get Status</button>
+                <p ></p>
+                <div class="alert alert-info" role="alert">
+                    Output:{{server2Status}}
+                  </div>
+            </div>
+          </div>
+  </div>
+
+    <hr>
+    <div class="panel panel-default">
+        <div class="panel-heading">Weather Reporting and Forecasting</div>
+        <div class="panel-body">
+                <div class="form-inline">
+
+                      <label for="report">Weather Reporting for specific area</label>
+                      <br><br>
+                      ZipCode: <input [(ngModel)]="zipcode" type="number" name="zipcode" class="form-control"><br>
+                      <p ></p>
+                      <div class="alert alert-success" role="alert">
+                          Report:{{moveData}}
+                        </div>
+
+                      <button  (click)="report()" type="submit" class="btn btn-primary" id="report"> Weather Report</button><br><br>
+
+
+                      <label for="forecast">Weather forecast for the specific city</label>
+                      <br><br>
+                      City: <input [(ngModel)]="city" type="text" name="city" class="form-control"><br><br>
+                      Days: <input [(ngModel)]="days" type="number" name="days" class="form-control"><br><br>
+
+                      <p ></p>
+                      <div class="alert alert-success" role="alert" >
+                          Weather forcast after {{days}} days for your entered city {{city}}:{{postData}}
+                        </div>
+                        <button  (click)="forcast()" type="submit" class="btn btn-primary" id="forecast">Weather forecast</button>
+                </div>
+          </div>
+      </div>
+      <hr>
+      <div class="panel panel-default">
+          <div class="panel-heading"> Server1 Communication</div>
+
+          <div class="panel-body">
+          <div class="form-group">
+         
+
+                <label for="server1status">Server1 status from Server1</label>
+                <button  (click)="getServer1Status()" type="submit" class="btn btn-primary" id="server1status"> Get  Status</button>
+                <p ></p>
+                <div class="alert alert-info" role="alert">
+                    Output:{{server1Status}}
+                  </div>
+
+                <label for="server21status">Server1 status from Server2</label>
+                <button  (click)="getServer21Status()" type="submit" class="btn btn-primary" id="server21status">Get  Status </button>
+                <p></p>
+                <div class="alert alert-info" role="alert">
+                    Output:{{server21Status}}
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div> 
+</div> 
