@@ -1,0 +1,110 @@
+<div class="container">
+
+      <h1>
+        {{title}}
+      </h1>
+
+      <div class="panel-group">
+          
+          <div class="panel panel-default">
+              <div class="panel-heading"> Angular2 Service Communication</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                    <label for="currentTime">currentTime</label>
+                    <button (click)="getCurrentTime()" type="submit" class="btn btn-primary"id="currentTime">Get Time</button>
+                    <p></p>
+                    <div class="alert alert-info" role="alert">
+                      Output:{{currentTime}}
+                    </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="panel-group">
+          
+          <div class="panel panel-default">
+              <div class="panel-heading"> Angular2 Server Service Communication</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                    <label for="datalist">datalist</label>
+                    <button (click)="getList()" type="submit" class="btn btn-primary"id="datalist">Get List</button>
+                    <p></p>
+                    <div class="alert alert-info" role="alert">
+                      Output:{{datalist}}
+                    </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="panel-group">
+          
+          <div class="panel panel-default">
+              <div class="panel-heading"> POST Form</div>
+              <div class="panel-body">
+                  <form (ngSubmit)="onSubmit(wForm.value)" #wForm="ngForm">
+                      
+                          <div class="form-group">
+                              <label class="col-xs-4 control-label" for="city" >City : </label>
+                              <div class="col-xs-8">
+                                  <input type="text" style="width: 300px" class="form-control" required
+                                        [(ngModel)]="weather.city"  name="city"    #city="ngModel"                               
+                                  >
+                                
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-xs-4 control-label" for="description" >Description: </label>
+                              <div class="col-xs-8">
+                                  <input type="text" style="width: 300px" class="form-control" required
+                                        [(ngModel)]="weather.description"  name="description"    #description="ngModel"       >
+                                
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-xs-4 control-label" for="zipcode" >Zipcode : </label>
+                              <div class="col-xs-8">
+                                  <input type="number" style="width: 300px" class="form-control" required
+                                        [(ngModel)]="weather.zipcode" name="zipcode" #zipcode="ngModel"
+                                        
+                                  >
+                                
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label class="col-xs-4 control-label" for="temperature" >Temperature : </label>
+                              <div class="col-xs-8">
+                                  <input type="number" style="width: 300px" class="form-control" required
+                                        [(ngModel)]="weather.temperature" name="temperature" #temperature="ngModel"
+                                        
+                                  >
+                                
+                              </div>
+                          </div>
+                      
+                          <div class="form-group">
+                              <div class="col-xs-12">
+                                  <button type="submit" class="btn btn-default">Submit</button>
+                              </div>
+                          </div>
+
+
+                          <div class="form-group">
+                              <label class="col-xs-4 control-label" >Submitted Data : </label>
+                              <div class="col-xs-8">
+                                  <div [hidden]="!submitted">
+                                      <span>from angulartypescript.com</span>
+                                      <textarea style="width: 300px" class="form-control" rows="6">{{data}}</textarea>
+                                  </div>
+                                  <div [hidden]="submitted">
+                                      <span>Edit your Data then click Submit to get Data from : angulartypescript.com</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+        </div>
+      </div>
+  </div>
+
+</div>
